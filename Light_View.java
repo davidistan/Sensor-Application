@@ -33,7 +33,6 @@ public class Light_View extends View {
     }
 
     protected void onDraw(Canvas canvas) {
-        // Fix Canvas_Height - 20 for the rest of this method
         Paint b = new Paint();
         b.setColor(Color.BLUE);
         b.setTextSize(35);
@@ -98,7 +97,6 @@ public class Light_View extends View {
         canvas.drawLine(75, ((canvas.getHeight() - 100) - one_nine_offset) - 20, canvas.getWidth(), ((canvas.getHeight() - 100) - one_nine_offset) - 20, p);
         float two_hun_offset = (canvas.getHeight() - 100) * (offset * 20);
         canvas.drawLine(75, ((canvas.getHeight() - 100) - two_hun_offset) - 20, canvas.getWidth(), ((canvas.getHeight() - 100) - two_hun_offset) - 20, p);
-      //  canvas.drawLine(0, two_hun_offset, canvas.getWidth(), two_hun_offset, p);
         canvas.drawText("" + 0, 50, canvas.getHeight() - 100, p);
         canvas.drawText("" + 25, 25, (canvas.getHeight() - 100) - ((canvas.getHeight() - 100) * offset), p);
         canvas.drawText("" + 50, 25, (canvas.getHeight() - 100) - twenty_offset, p);
@@ -141,7 +139,7 @@ public class Light_View extends View {
         canvas.drawLine(twenty * 19, canvas.getHeight() - 100, twenty * 19, (canvas.getHeight() - 100) - two_hun_offset, p);
         for (int i = 0; i < points.size(); i++) {
             canvas.drawText("" + secondz.get(i), time.get(i), canvas.getHeight() - 75, x);
-//            Log.v("X", "" + time.get(i));
+            
             if (i < points.size() - 1) {
                 canvas.drawCircle(time.get(i),(((canvas.getHeight() - 100) - ((canvas.getHeight() - 100) * (avg / 525))) - 25), 25, r);
                 canvas.drawLine(time.get(i), (((canvas.getHeight() - 100) - ((canvas.getHeight() - 100) * (avg / 525))) - 25), time.get(i + 1),
@@ -158,20 +156,7 @@ public class Light_View extends View {
                     canvas.drawLine(time.get(i), (((canvas.getHeight() - 100) - ((canvas.getHeight() - 100) * (stan_dev / 525))) - 25), time.get(i + 1),
                             (((canvas.getHeight() - 100) - ((canvas.getHeight() - 100) * (stan_dev / 525))) - 25), b);
                 }
-//                Log.v("LIGHT_READING", "" + ((canvas.getHeight() - 100) - ((canvas.getHeight() - 100) * (avg / 525))));
-//                Log.v("20", "" + (canvas.getHeight() - (canvas.getHeight() * (20/80))));
-//            } else if (i < points.size() - 1 && full == true) {
-//                if (i >= 1) {
-//                    canvas.drawCircle(time.get(i),(canvas.getHeight() - (canvas.getHeight() * (avg / 80))), 25, r);
-//                    canvas.drawLine(time.get(i), (canvas.getHeight() - (canvas.getHeight() * (avg / 80))), time.get(i + 1),
-//                            (canvas.getHeight() - (canvas.getHeight() * (avg / 80))), r);
-//                    canvas.drawCircle(time.get(i), (canvas.getHeight() - (canvas.getHeight() * (points.get(i) / 80))), 25, p);
-//                    canvas.drawLine(time.get(i), (canvas.getHeight() - (canvas.getHeight() * (points.get(i) / 80))), time.get(i + 1),
-//                            (canvas.getHeight() - (canvas.getHeight() * (points.get(i + 1) / 80))), p);
-//                    Log.v("LIGHT_READING", "" + (canvas.getHeight() - (canvas.getHeight() * (points.get(i) / 80))));
-//                    Log.v("20", "" + (canvas.getHeight() - (canvas.getHeight() * (20/80))));
-//
-//                }
+                
             } else {
                 canvas.drawCircle(time.get(i),(((canvas.getHeight() - 100) - ((canvas.getHeight() - 100) * (avg / 525))) - 20), 25, r);
                 canvas.drawCircle(time.get(i), (((canvas.getHeight() - 100) - ((canvas.getHeight() - 100) * (points.get(i) / 525))) - 25), 25, p);
@@ -184,7 +169,6 @@ public class Light_View extends View {
         }
     }
 
-
     public void addPoint(float f) {
         if (points.size() == 10) {
             points.set(0, f);
@@ -194,7 +178,6 @@ public class Light_View extends View {
         } else {
             points.add(f);
         }
-
     }
 
     public void addTime(float f) {
@@ -204,7 +187,6 @@ public class Light_View extends View {
         } else {
             time.add(f);
         }
-
     }
 
     public void average(float total, float times) {
@@ -216,7 +198,6 @@ public class Light_View extends View {
     public void st_dev(float f, float g) {
         float variance = f/(g - 1);
         stan_dev = (float) Math.sqrt(variance);
-
     }
 
     public void seconds(float f) {

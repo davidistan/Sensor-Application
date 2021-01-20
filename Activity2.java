@@ -81,5 +81,4 @@ public class Activity2 extends AppCompatActivity implements SensorEventListener 
     public void onAccuracyChanged(Sensor sensor, int accuracy) {
 
     }
-
 }

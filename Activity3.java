@@ -35,9 +35,7 @@ public class Activity3 extends AppCompatActivity implements SensorEventListener 
             float distance = event.values[0];
             TextView text = (findViewById(R.id.p_sensor));
             text.setText("" + distance + "");
-
         }
-
     }
 
     @Override

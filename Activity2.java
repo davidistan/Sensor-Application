@@ -67,7 +67,6 @@ public class Activity2 extends AppCompatActivity implements SensorEventListener 
             total_dev = total_dev + (float) Math.pow((light - avg), 2);
             float sec = System.currentTimeMillis();
             float time = (System.currentTimeMillis()%1313);
-//            Log.v("LIGHT", "" + light);
             Light_View l_view = findViewById(R.id.l_view);
             l_view.seconds(sec);
             l_view.average(total, total_times);
@@ -75,11 +74,7 @@ public class Activity2 extends AppCompatActivity implements SensorEventListener 
             l_view.addTime(time);
             l_view.st_dev(total_dev, total_times);
             l_view.invalidate();
-
-
-
         }
-
     }
 
     @Override

@@ -1,0 +1,86 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:orientation="vertical"
+    android:background="@color/BLACK"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".MainActivity">
+
+    <TextView
+        android:layout_marginTop="50dp"
+        android:layout_gravity="center"
+        android:textAlignment="center"
+        android:textColor="@color/RED"
+        android:textSize="75dp"
+        android:text="Choose a Sensor"
+        android:layout_width="match_parent"
+        android:layout_height="200dp" />
+
+    <LinearLayout
+        android:layout_marginTop="25dp"
+        android:layout_gravity="center_vertical"
+        android:orientation="horizontal"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content">
+        <ImageButton
+            android:layout_width="150dp"
+            android:layout_height="100dp"
+            android:background="@drawable/light"
+            android:onClick="light_foo"/>
+
+        <TextView
+            android:background="@color/WHITE"
+            android:textColor="@color/BLACK"
+            android:textSize="16dp"
+            android:text="Status:Light Sensor is Present     Info: Max Range = 65535.0; Resolution = 1.0; Max Delay = 200000;"
+            android:layout_marginLeft="10dp"
+            android:layout_width="225dp"
+            android:layout_height="100dp" />
+    </LinearLayout>
+
+    <!--<LinearLayout-->
+        <!--android:layout_marginTop="100dp"-->
+        <!--android:layout_width="wrap_content"-->
+        <!--android:layout_height="wrap_content"-->
+        <!--android:orientation="horizontal">-->
+        <!--<ImageButton-->
+            <!--android:layout_width="150dp"-->
+            <!--android:layout_height="100dp"-->
+            <!--android:background="@drawable/proximity"-->
+            <!--android:onClick="proximity_foo"/>-->
+        <!--<TextView-->
+            <!--android:background="@drawable/proximity_sensor"-->
+            <!--android:layout_marginLeft="10dp"-->
+            <!--android:layout_width="225dp"-->
+            <!--android:layout_height="100dp" />-->
+
+    <!--</LinearLayout>-->
+
+      <LinearLayout
+          android:layout_marginTop="100dp"
+          android:orientation="horizontal"
+          android:layout_width="wrap_content"
+          android:layout_height="wrap_content">
+        <ImageButton
+            android:layout_width="150dp"
+            android:layout_height="100dp"
+            android:background="@drawable/acceleration"
+            android:onClick="accelo_foo"/>
+
+          <TextView
+              android:background="@color/WHITE"
+              android:textColor="@color/BLACK"
+              android:textSize="16dp"
+              android:text="Status:Accelerometer Sensor is Present; Info: Max Range = 39.2266; Resolution = 0.001197; Max Delay = 200000;"
+              android:layout_marginLeft="10dp"
+              android:layout_width="225dp"
+              android:layout_height="100dp" />
+          <!--<TextView-->
+              <!--android:background="@drawable/accelo_sensor"-->
+              <!--android:layout_marginLeft="10dp"-->
+              <!--android:layout_width="225dp"-->
+              <!--android:layout_height="100dp" />-->
+      </LinearLayout>
+    </LinearLayout>

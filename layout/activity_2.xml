@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
+    android:background="@color/BLACK"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <com.example.assignment2.Light_View
+        android:id="@+id/l_view"
+        android:layout_height="550dp"
+        android:layout_width="550dp"
+        ></com.example.assignment2.Light_View>
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content">
+        <ImageButton
+            android:background="@drawable/back"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:onClick="back"/>
+        <com.example.assignment2.Light_Animation
+            android:id="@+id/light_view"
+            android:layout_marginLeft="25dp"
+            android:layout_width="150dp"
+            android:layout_height="100dp" />
+    </LinearLayout>
+
+
+
+</LinearLayout>

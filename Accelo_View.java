@@ -31,9 +31,6 @@ public class Accelo_View extends View {
     }
 
     public void onDraw(Canvas canvas) {
-//        ImageView img = findViewById(R.id.image_view);
-//        img.setBackgroundResource(R.drawable.accelo_anim);
-//        ((AnimationDrawable)img.getBackground()).start();
         Paint milli = new Paint();
         milli.setColor(Color.WHITE);
         milli.setTextSize(35);
@@ -97,7 +94,7 @@ public class Accelo_View extends View {
         canvas.drawLine((eighth * 7), modified_canvas, (eighth * 7), (canvas.getHeight() - 100) - forty_offset, p);
         for (int i = 0; i < points.size(); i++) {
             canvas.drawText("" + secondz.get(i), times.get(i), canvas.getHeight() - 75, x);
-//            Log.v("ST_DEV", "" + stan_dev);
+            
             if (i < points.size() - 1) {
                 canvas.drawCircle(times.get(i), ((modified_canvas - (modified_canvas * (avg / 90))) - 25), 25, r);
                 canvas.drawLine(times.get(i), ((modified_canvas - (modified_canvas * (avg / 90))) - 25), times.get(i + 1),
@@ -113,8 +110,8 @@ public class Accelo_View extends View {
                     canvas.drawCircle(times.get(i), ((modified_canvas - (modified_canvas * (stan_dev / 90))) - 25), 25, b);
                     canvas.drawLine(times.get(i), ((modified_canvas - (modified_canvas * (stan_dev / 90))) - 25), times.get(i + 1),
                             ((modified_canvas - (modified_canvas * (stan_dev / 90))) - 25), b);
-
                 }
+                
             } else {
                 canvas.drawCircle(times.get(i), modified_canvas - (((modified_canvas * (points.get(i) / 90))) - 25), 25, p);
                 canvas.drawCircle(times.get(i), modified_canvas - (((modified_canvas * (avg / 90))) - 25), 25, r);
@@ -124,7 +121,6 @@ public class Accelo_View extends View {
                     canvas.drawCircle(times.get(i), ((modified_canvas - (modified_canvas * (stan_dev / 90))) - 25), 25, b);
                 }
             }
-
         }
     }
 
@@ -139,7 +135,6 @@ public class Accelo_View extends View {
         } else {
             points.add(f);
         }
-
     }
 
     public void addTime(float f) {
@@ -149,7 +144,6 @@ public class Accelo_View extends View {
         } else {
             times.add(f);
         }
-
     }
 
     public void st_dev(float f, float g) {

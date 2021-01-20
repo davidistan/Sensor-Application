@@ -22,9 +22,8 @@ public class Activity4 extends AppCompatActivity implements SensorEventListener 
     float total_dev = 0;
     SensorManager sm;
     Sensor accelo_sensor;
-//    ImageView img = findViewById(R.id.image_view);
+    
     protected void onCreate(Bundle savedInstanceState) {
-
         sm = (SensorManager) getSystemService(SENSOR_SERVICE);
         accelo_sensor = sm.getDefaultSensor(Sensor.TYPE_ACCELEROMETER);
         float range = accelo_sensor.getMaximumRange();
@@ -36,7 +35,6 @@ public class Activity4 extends AppCompatActivity implements SensorEventListener 
         sm.registerListener(this, accelo_sensor, 1000000);
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_4);
-//        ((AnimationDrawable)img.getBackground()).selectDrawable(1);
     }
 
     public void back(View view) {
@@ -68,22 +66,14 @@ public class Activity4 extends AppCompatActivity implements SensorEventListener 
                 Acceleration_Animation anim = (findViewById(R.id.anim));
                 anim.setBackgroundResource(R.drawable.accelerometer_anim);
                 ((AnimationDrawable) anim.getBackground()).start();
-
             }
-//                img.setBackgroundResource(R.drawable.accelo_anim);
-//                ((AnimationDrawable)img.getBackground()).start();
-//
-//            } else if (acceleration > 15) {
-//                ((AnimationDrawable)img.getBackground()).stop();
-//                img.setBackgroundResource(R.drawable.accelerom);
-//                ((AnimationDrawable)img.getBackground()).start();
-//            }
+            
             float time = System.currentTimeMillis()%1313;
             total_acceleration = total_acceleration + acceleration;
             total_times = total_times + 1;
             avg = total_acceleration/total_times;
             total_dev = total_dev + (float) Math.pow((acceleration - avg), 2);
-//            Log.v("ACCELERATION", "" + acceleration);
+            
             Accelo_View a = (findViewById(R.id.a_view));
             a.seconds(sec);
             a.addPoint(acceleration);
@@ -91,9 +81,7 @@ public class Activity4 extends AppCompatActivity implements SensorEventListener 
             a.average(total_acceleration, total_times);
             a.st_dev(total_dev, total_times);
             a.invalidate();
-
         }
-
     }
 
     @Override
